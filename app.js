@@ -156,7 +156,7 @@ angular.module('app').directive('userQuestionnaire', function () {
 
             var calculateProgressPercentage = function() {
                 var maxPages = $filter('number')($scope.userQuestionnaire.questions.length / $scope.questionsPerPage, 0);
-                var currentPage = $scope.currentPage + 1;
+                var currentPage = $scope.currentPage + 1; // zero based
                 return percentage = currentPage/maxPages * 100
             }
 
@@ -166,12 +166,12 @@ angular.module('app').directive('userQuestionnaire', function () {
 
             $scope.next = function () {
                 $scope.direction = 1;
-                $scope.currentPage = $scope.currentPage + 1;
+                $scope.currentPage += 1;
             }
 
             $scope.previous = function () {
                 $scope.direction = 0;
-                $scope.currentPage = $scope.currentPage - 1;
+                $scope.currentPage -= 1;
             }
 
             $scope.save = function() {

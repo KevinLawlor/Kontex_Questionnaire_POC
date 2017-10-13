@@ -5,6 +5,10 @@
     height: 450px;
 }
 
+.progress-thicker {
+	height:20px;
+} 
+
 .question-panel.ng-enter,
 .question-panel.ng-leave { 
   position:absolute; 
